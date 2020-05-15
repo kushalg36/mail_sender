@@ -11,6 +11,5 @@ def new_driver():
     '''
     Instantiate chrome object
     '''
-    browser = webdriver.Chrome()     
-    browser.get('https://myshare.vodafoneidea.com')
+    browser = webdriver.Chrome()
     return browser
