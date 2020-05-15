@@ -1,6 +1,7 @@
 from driver import new_driver
 from json_file_parser import json_credentials
 import time
+from drag_and_drop_func import drop_files
 
 """
 TODO
@@ -25,6 +26,7 @@ class filler:
         self.driver = new_driver()
         self.url='https://myshare.vodafoneidea.com'
         self.driver.get(self.url)
+        self.driver
     
     def login_now(self):
         """
@@ -59,3 +61,7 @@ class filler:
         body = self.driver.find_element_by_id('message_message')
         body.send_keys('MAIL SENT YAYAYYAYA!!!!')
 
+    def drag_n_drop(self):
+
+        dropzone = self.driver.find_element_by_css_selector(".html5.drop_target")
+        dropzone.drop_files("C://Users//kusha//OneDrive//Desktop//project//deep learning//datasets//crypto_data//crypto_data//BCH-USD.csv")
