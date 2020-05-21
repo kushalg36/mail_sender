@@ -9,16 +9,17 @@ TODO
 2. Set the value of password in enviroment variable ----DONE
 3. Create logs
 4. Password check
-5. Seperate json file for mail construction
+5. Seperate json file for mail construction ----DONE
 6. Handle chrome version 
 """
 
-"""
-===================================
-IMPORTANT:
-Inorder to change password- change the password in credential.json file
-===================================
-"""
+
+# ===================================
+# IMPORTANT:
+# Inorder to change password- change the password in credential.json file
+# Inorder to change filepath/to/cc/body- change the content in json_file_parser file
+# ===================================
+
 class filler:
     def __init__(self):
         self.credentials = json_credentials()
@@ -42,7 +43,6 @@ class filler:
 
         submit = self.driver.find_element_by_css_selector('.btn.btn-primary.hidden-xs')
         submit.click()
-        return True
 
     def mail_builder(self):
         """
@@ -68,7 +68,7 @@ class filler:
         Tackle drag and drop of files from filesystem
         '''
         dropzone = self.driver.find_element_by_css_selector(".html5.drop_target")
-        dropzone.drop_files("C://Users//kusha//OneDrive//Desktop//project//deep learning//datasets//crypto_data//crypto_data//BCH-USD.csv")
+        dropzone.drop_files(self.mail_info['filepath'])
 
     def check_box(self):
         '''
@@ -78,5 +78,5 @@ class filler:
         auto_send_check.click()
 
     def close(self):
-        time.sleep(15)
-        self.driver.close()
+        time.sleep(60)
+        self.driver.quit()
