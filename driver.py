@@ -5,7 +5,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 '''
 =========================================
 IMPORTANT:
-1. Add the file system link of the driver to enviroment variables
+1. Add the file system link of the driver to enviroment variables if it is not in enviromnetal variables
 =========================================
 '''
 
